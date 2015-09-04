@@ -4,6 +4,11 @@ body, html {
     background-color: #111;
 }
 
+pre {
+    padding: 0;
+    margin: 0;
+}
+
 .container {
     width: 420px;
     margin: 0 auto;
@@ -44,4 +49,11 @@ form#input input {
     width: 100%;
     min-height: 420px;
     border: dashed 1px #666;
+}
+
+.tombstones {
+    font-size: 10px;
+    color: #666;
+    width: 280px;
+    margin: 0 auto;
 }
