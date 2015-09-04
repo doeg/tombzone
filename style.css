@@ -5,7 +5,7 @@ body, html {
 }
 
 .container {
-    width: 960px;
+    width: 420px;
     margin: 0 auto;
     padding: 24px 0;
 }
@@ -13,17 +13,18 @@ body, html {
 .header {
     color: #32EA32;
     font-family: "Courier New", Monospace;
-    font-size: 0.8rem;
+    font-size: 8px;
+    padding: 24px 0;
 }
 
 .header pre {
-    width: 420px;
     margin: 0 auto;
+    width: 400px;
 }
 
 .input-container {
     text-align: center;
-    width: 300px;
+    width: 200px;
     margin: 0 auto;
 }
 
@@ -37,4 +38,10 @@ form#input input {
     width: 100%;
     margin: 0;
     box-sizing: border-box;
+}
+
+.tombstone-output {
+    width: 100%;
+    min-height: 420px;
+    border: dashed 1px #666;
 }
