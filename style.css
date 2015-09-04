@@ -3,3 +3,38 @@ body, html {
     padding: 0;
     background-color: #111;
 }
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 24px 0;
+}
+
+.header {
+    color: #32EA32;
+    font-family: "Courier New", Monospace;
+    font-size: 0.8rem;
+}
+
+.header pre {
+    width: 420px;
+    margin: 0 auto;
+}
+
+.input-container {
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin: 6px 0;
+}
+
+form#input select,
+form#input textarea,
+form#input input {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
