@@ -1,31 +1,31 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
-module.exports = [
-    {
+module.exports = {
+    "weeping angel": {
         name: "weeping angel",
         startRow: 11,
         startCol: 12,
         maxWidth: 16,
-        template: [
-            ['                  _  /)                   '],
-            ['                 mo / )                   '],
-            ['                 |/)\\)                    '],
-            ['                  /\\_                     '],
-            ['                  \\__|=                   '],
-            ['                 (    )                   '],
-            ['                 __)(__                   '],
-            ['           _____/      \\\\_____            '],
-            ['          |                  ||           '],
-            ['          |    † R.I.P. †    ||           '],
-            ['          |                  ||           '],
-            ['          | ################ ||           '],
-            ['          |                  ||           '],
-            ['  *       | *   **    * **   |**      **  '],
-            ['   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//   ']
+        ascii: [
+            '                  _  /)                   ',
+            '                 mo / )                   ',
+            '                 |/)\\)                    ',
+            '                  /\\_                     ',
+            '                  \\__|=                   ',
+            '                 (    )                   ',
+            '                 __)(__                   ',
+            '           _____/      \\\\_____            ',
+            '          |                  ||           ',
+            '          |    + R.I.P. +    ||           ',
+            '          |                  ||           ',
+            '          | ################ ||           ',
+            '          |                  ||           ',
+            '  *       | *   **    * **   |**      **  ',
+            '   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//   '
           ],
     }
-];
+};
 
 },{}],2:[function(require,module,exports){
 /**
@@ -48,6 +48,7 @@ module.exports = [
 
     var input;
     var output;
+    var templateSelect;
     var epitaphInput;
 
     var template;
@@ -58,24 +59,28 @@ module.exports = [
      * Update the tombstone whenever the template or tombstone text changes.
      */
     function onFormChange(e) {
-        parse();
-        draw();
+        var tombstone = parse();
+        draw(tombstone);
     }
 
     function parse() {
-        console.log();
-        console.log("parsing");
-        console.log("~~~~~~~");
-
+        var templateID = templateSelect.options[templateSelect.selectedIndex].value;
+        var template = templates[templateID];
         var epitaph = epitaphInput.value;
-        console.log(epitaph);
 
+        // Insert the epitaph into the epitaph zone
+
+        // Pad the lines
+
+
+        return template.ascii
     }
 
-    function draw() {
-        console.log();
-        console.log("drawing");
-        console.log("~~~~~~~");
+    function draw(tombstone) {
+        for (var l = 0; l < tombstone.length; l++) {
+            var line = tombstone[l];
+            console.log(line);
+        }
     }
 
     document.addEventListener("DOMContentLoaded", function(e) {
@@ -93,6 +98,8 @@ module.exports = [
         epitaphInput = document.getElementById("epitaph");
         epitaphInput.onkeyup = onFormChange;
         epitaphInput.onblur = onFormChange;
+
+        templateSelect = document.getElementById("template");
     });
 })();
 

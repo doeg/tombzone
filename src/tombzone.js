@@ -18,6 +18,7 @@
 
     var input;
     var output;
+    var templateSelect;
     var epitaphInput;
 
     var template;
@@ -28,24 +29,28 @@
      * Update the tombstone whenever the template or tombstone text changes.
      */
     function onFormChange(e) {
-        parse();
-        draw();
+        var tombstone = parse();
+        draw(tombstone);
     }
 
     function parse() {
-        console.log();
-        console.log("parsing");
-        console.log("~~~~~~~");
-
+        var templateID = templateSelect.options[templateSelect.selectedIndex].value;
+        var template = templates[templateID];
         var epitaph = epitaphInput.value;
-        console.log(epitaph);
 
+        // Insert the epitaph into the epitaph zone
+
+        // Pad the lines
+
+
+        return template.ascii
     }
 
-    function draw() {
-        console.log();
-        console.log("drawing");
-        console.log("~~~~~~~");
+    function draw(tombstone) {
+        for (var l = 0; l < tombstone.length; l++) {
+            var line = tombstone[l];
+            console.log(line);
+        }
     }
 
     document.addEventListener("DOMContentLoaded", function(e) {
@@ -63,6 +68,8 @@
         epitaphInput = document.getElementById("epitaph");
         epitaphInput.onkeyup = onFormChange;
         epitaphInput.onblur = onFormChange;
+
+        templateSelect = document.getElementById("template");
     });
 })();
 
