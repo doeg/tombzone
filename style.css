@@ -29,20 +29,44 @@ pre {
 
 .input-container {
     text-align: center;
-    width: 200px;
+    width: 210px;
     margin: 0 auto;
 }
 
-.form-group {
-    margin: 6px 0;
+form#input {
+    padding: 12px 0;
+}
+
+form#input .form-group {
+    margin: 12px 0;
 }
 
 form#input select,
-form#input textarea,
-form#input input {
+form#input textarea {
     width: 100%;
     margin: 0;
     box-sizing: border-box;
+    outline: none;
+    border: solid 1px #666;
+    background-color: transparent;
+    color: white;
+    font-family: "Courier New", Monospace;
+    transition: all 0.3s ease-in-out;
+}
+
+form#input select {
+    height: 24px;
+}
+
+form#input textarea {
+    text-align: center;
+    resize: none;
+}
+
+form#input select:focus,
+form#input textarea:focus {
+  box-shadow: 0 0 2px #32EA32;
+  border: 1px solid #32EA32;
 }
 
 .tombstone-output {
