@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+watchify src/tombzone.js -o tombzone-bundle.js -v
