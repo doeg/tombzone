@@ -127,6 +127,7 @@
         epitaphInput.onblur = onFormChange;
 
         templateSelect = document.getElementById("template");
+        onFormChange();
     });
 })();
 
