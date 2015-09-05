@@ -28,7 +28,6 @@ pre {
 }
 
 .input-container {
-    text-align: center;
     width: 210px;
     margin: 0 auto;
 }
@@ -59,7 +58,7 @@ form#input select {
 }
 
 #epitaph {
-    text-align: center;
+    padding: 1ch;
     resize: none;
 }
 

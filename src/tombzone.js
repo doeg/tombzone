@@ -125,6 +125,7 @@
         epitaphInput = document.getElementById("epitaph");
         epitaphInput.onkeyup = onFormChange;
         epitaphInput.onblur = onFormChange;
+        epitaphInput.focus();
 
         templateSelect = document.getElementById("template");
         onFormChange();
