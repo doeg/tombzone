@@ -77,7 +77,8 @@ form#input textarea:focus {
     margin: 0 auto;
     border: dashed 1px #666;
     color: white;
-    padding: 4ch 1ch;
+    padding: 2ch;
+    font-size: 11px;
 }
 
 #output pre p {
