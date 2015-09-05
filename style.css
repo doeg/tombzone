@@ -71,8 +71,18 @@ form#input textarea:focus {
 
 .tombstone-output {
     width: 100%;
-    min-height: 420px;
+}
+
+#output {
+    margin: 0 auto;
     border: dashed 1px #666;
+    color: white;
+    padding: 4ch 1ch;
+}
+
+#output pre p {
+    margin: 0;
+    padding: 0;
 }
 
 .tombstones {
@@ -80,4 +90,5 @@ form#input textarea:focus {
     color: #666;
     width: 280px;
     margin: 0 auto;
+    margin-bottom: -0.25rem;
 }
