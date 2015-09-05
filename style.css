@@ -42,7 +42,7 @@ form#input .form-group {
 }
 
 form#input select,
-form#input textarea {
+#epitaph {
     width: 100%;
     margin: 0;
     box-sizing: border-box;
@@ -58,13 +58,13 @@ form#input select {
     height: 24px;
 }
 
-form#input textarea {
+#epitaph {
     text-align: center;
     resize: none;
 }
 
 form#input select:focus,
-form#input textarea:focus {
+#epitaph:focus {
   box-shadow: 0 0 2px #32EA32;
   border: 1px solid #32EA32;
 }

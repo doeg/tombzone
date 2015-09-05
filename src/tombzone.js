@@ -33,7 +33,7 @@
 
         var templateID = templateSelect.options[templateSelect.selectedIndex].value;
         var template = templates[templateID];
-        var epitaph = epitaphInput.value;
+        var epitaph = epitaphInput.innerText;
 
         if (!epitaph.trim()) return template.ascii;
 
