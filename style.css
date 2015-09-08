@@ -16,13 +16,14 @@ pre {
 }
 
 .header {
-    color: #32EA32;
+    
     font-family: "Courier New", Monospace;
     font-size: 8px;
     padding: 24px 0;
 }
 
 .header pre {
+    color: #32EA32;
     margin: 0 auto;
     width: 400px;
 }

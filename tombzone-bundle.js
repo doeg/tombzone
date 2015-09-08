@@ -56,8 +56,8 @@ module.exports = {
         ],
     },
 
-    "little one": {
-        name: "little one",
+    "tiny ghoul": {
+        name: "tiny ghoul",
         startRow: 3,
         startCol: 7,
         maxWidth: 5,
