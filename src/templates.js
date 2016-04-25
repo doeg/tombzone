@@ -76,7 +76,7 @@ module.exports = {
         startCol: 5,
         maxWidth: 12,
         ascii: [
-        '          .            ',
+        '          .             ',
         '         -|-              ',
         '          |               ',
         '      __..|..__           ',
