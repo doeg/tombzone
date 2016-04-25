@@ -100,7 +100,7 @@ module.exports = {
         name: "rest in pieces",
         startRow: 15,
         startCol: 35,
-        maxWidth: 6,
+        maxWidth: 9,
         ascii: [
            '          .--. .-,       .-..-.__                  ',
            '        .\'(`.-` \\_.-\'-./`  |\\_( "\\__',
