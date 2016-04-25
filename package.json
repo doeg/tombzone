@@ -4,6 +4,7 @@
   "description": "ascii, ascii art, tombstone, spooky",
   "main": "tombstone.js",
   "scripts": {
+    "watch": "./node_modules/webpack/bin/webpack.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "license": "GPLv2",
   "bugs": {
     "url": "https://github.com/doeg/tombstonejs/issues"
+  },
+  "dependencies": {
+    "webpack": "^1.13.0"
   }
 }

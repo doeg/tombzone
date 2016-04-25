@@ -21,6 +21,9 @@
     var templateSelect;
     var epitaphInput;
 
+
+    console.log('blah');
+
     /**
      * Update the tombstone whenever the template or tombstone text changes.
      */
