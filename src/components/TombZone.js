@@ -9,7 +9,7 @@ export default React.createClass({
   getInitialState() {
     return {
       epitaph: '',
-      template: 'weeping-angel'
+      template: 'rest-in-pieces'
     };
   },
 
@@ -21,6 +21,16 @@ export default React.createClass({
   onEpitaphUpdate(e) {
     const epitaph = e.target.value;
     this.setState({ epitaph });
+  },
+
+  renderSelect() {
+    return (
+      <select id="template" defaultValue={this.state.template} onChange={this.onTombstoneSelect}>
+        {_.toPairs(templates).map(t => (
+            <option key={t[0]} value={t[0]}>{_.get(t[1], 'name')}</option>
+        ))})
+      </select>
+    );
   },
 
   renderTombstone() {
@@ -73,19 +83,7 @@ export default React.createClass({
         <div className="input-container">
             <form id="input">
                 <div className="form-group">
-                    <select id="template" onChange={this.onTombstoneSelect}>
-                        <option value="weeping-angel" defaultValue>
-                            weeping angel
-                        </option>
-
-                        <option value="tiny-ghoul">
-                            tiny ghoul
-                        </option>
-
-                        <option value="archangel">
-                            archangel
-                        </option>
-                    </select>
+                  {this.renderSelect()}
                 </div>
 
                 <div className="form-group">
