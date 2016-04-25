@@ -72,7 +72,7 @@ module.exports = {
 
     "kiss-from-a-rose": {
         name: "kiss from a rose",
-        startRow: 6,
+        startRow: 9,
         startCol: 5,
         maxWidth: 12,
         ascii: [
