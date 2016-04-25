@@ -50,7 +50,6 @@ form#input select,
     background-color: transparent;
     color: white;
     font-family: "Courier New", Monospace;
-    transition: all 0.3s ease-in-out;
 }
 
 form#input select {

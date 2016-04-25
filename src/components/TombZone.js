@@ -1,5 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
+import TextArea from 'react-textarea-autosize';
+
 import templates from '../templates';
 import { makeTombstone } from '../modules/tombstone';
 
@@ -87,7 +89,7 @@ export default React.createClass({
                 </div>
 
                 <div className="form-group">
-                  <textarea id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph"/>
+                  <TextArea id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph" rows={3}/>
                 </div>
             </form>
         </div>
