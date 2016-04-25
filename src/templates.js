@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-    "weeping angel": {
+    "weeping-angel": {
         name: "weeping angel",
         startRow: 11,
         startCol: 12,
@@ -55,7 +55,7 @@ module.exports = {
         ],
     },
 
-    "tiny ghoul": {
+    "tiny-ghoul": {
         name: "tiny ghoul",
         startRow: 3,
         startCol: 7,
