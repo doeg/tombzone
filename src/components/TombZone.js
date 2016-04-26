@@ -70,8 +70,8 @@ export default React.createClass({
         /(O)\\`}
       </pre>
       <div className="hovertext">
-        <p>made by <a href="https://twitter.com/doeg">@doeg</a></p>
-        <p>much of the hovertext is from <a href="http://www.chris.com/ascii/" target="_blank">chris.com</a></p>
+        <p>made by <a href="https://twitter.com/doeg" target="_blank">@doeg</a></p>
+        <p>much of the ascii art is by <a href="https://en.m.wikipedia.org/wiki/Joan_Stark" target="_blank">joan stark</a> via <a href="http://www.chris.com/ascii/" target="_blank">chris.com</a></p>
       </div>
       </div>
       <div className="container">
