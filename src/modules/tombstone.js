@@ -12,33 +12,37 @@
 import _ from 'lodash';
 import templates from '../templates';
 
-/**
- * @param {string} str
- * @param {int} maxLength - inclusive
- * @returns {string[]}
- */
-export function splitStringIntoLines(str, maxLength) {
-
-  // Use any line breaks given by the user
-  var lines = str.split('\n');
-  var newLines = [];
-
-  // For each line, split into multiple lines if it exceeds the max length
-  for (var currentLine = 0; currentLine < lines.length; currentLine++) {
-    var line = lines[currentLine];
-
-    if (line.length <= maxLength) {
-      newLines.push(line);
-    } else {
-
-      var splitLines = line.split(/\s+/);
-      for (var s = 0; s < splitLines.length; s++) {
-        newLines.push(splitLines[s]);
-      }
-    }
+export function centerLine(str, maxLength, padChar = ' ') {
+  let buff = str;
+  let i = 0;
+  while (buff.length < maxLength) {
+    buff = i++ % 2 == 0 ? buff + ' ' : ' ' + buff;
   }
+  return buff;
+}
 
-  return newLines;
+export function splitString(str, maxLength) {
+  // Retain the original newline formatting of the epitaph
+  let result = [];
+
+  str.split('\n').forEach(words => {
+    let line = '';
+
+    // split the line into words
+    words.split(' ').forEach(word => {
+      if (line.length + word.length > maxLength) {
+        result.push(line);
+        line = '';
+      }
+
+      let newlyPaddedWord = line.length ? ` ${word}` : word;
+      line += newlyPaddedWord;
+    });
+
+    result.push(line);
+  });
+
+  return result;
 }
 
 export function makeTombstone(templateKey, epitaph) {
@@ -48,7 +52,7 @@ export function makeTombstone(templateKey, epitaph) {
     return template.ascii;
   }
 
-  var lines = splitStringIntoLines(epitaph, template.maxWidth);
+  var lines = splitString(epitaph, template.maxWidth);
 
   var ascii = [];
   for (var i = 0; i < template.ascii.length; i++) {

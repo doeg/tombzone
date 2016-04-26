@@ -36656,7 +36656,8 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.splitStringIntoLines = splitStringIntoLines;
+	exports.centerLine = centerLine;
+	exports.splitString = splitString;
 	exports.makeTombstone = makeTombstone;
 
 	var _lodash = __webpack_require__(167);
@@ -36670,11 +36671,6 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * @param {string} str
-	 * @param {int} maxLength - inclusive
-	 * @returns {string[]}
-	 */
-	/**
 	 *   ,                 ,,            ,
 	 *  ||                 ||           ||                        '
 	 * =||=  /'\\ \\/\\/\\ ||/|,  _-_, =||=  /'\\ \\/\\  _-_     \\  _-_,
@@ -36685,28 +36681,39 @@
 	 *  Extremely spooky tombstones, all shapes and sizes.       /
 	 *  http://tomb.zone
 	 */
-	function splitStringIntoLines(str, maxLength) {
+	function centerLine(str, maxLength) {
+	  var padChar = arguments.length <= 2 || arguments[2] === undefined ? ' ' : arguments[2];
 
-	  // Use any line breaks given by the user
-	  var lines = str.split('\n');
-	  var newLines = [];
-
-	  // For each line, split into multiple lines if it exceeds the max length
-	  for (var currentLine = 0; currentLine < lines.length; currentLine++) {
-	    var line = lines[currentLine];
-
-	    if (line.length <= maxLength) {
-	      newLines.push(line);
-	    } else {
-
-	      var splitLines = line.split(/\s+/);
-	      for (var s = 0; s < splitLines.length; s++) {
-	        newLines.push(splitLines[s]);
-	      }
-	    }
+	  var buff = str;
+	  var i = 0;
+	  while (buff.length < maxLength) {
+	    buff = i++ % 2 == 0 ? buff + ' ' : ' ' + buff;
 	  }
+	  return buff;
+	}
 
-	  return newLines;
+	function splitString(str, maxLength) {
+	  // Retain the original newline formatting of the epitaph
+	  var result = [];
+
+	  str.split('\n').forEach(function (words) {
+	    var line = '';
+
+	    // split the line into words
+	    words.split(' ').forEach(function (word) {
+	      if (line.length + word.length > maxLength) {
+	        result.push(line);
+	        line = '';
+	      }
+
+	      var newlyPaddedWord = line.length ? ' ' + word : word;
+	      line += newlyPaddedWord;
+	    });
+
+	    result.push(line);
+	  });
+
+	  return result;
 	}
 
 	function makeTombstone(templateKey, epitaph) {
@@ -36716,7 +36723,7 @@
 	    return template.ascii;
 	  }
 
-	  var lines = splitStringIntoLines(epitaph, template.maxWidth);
+	  var lines = splitString(epitaph, template.maxWidth);
 
 	  var ascii = [];
 	  for (var i = 0; i < template.ascii.length; i++) {
