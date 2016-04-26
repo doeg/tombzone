@@ -30,6 +30,7 @@
     "lodash": "^4.11.1",
     "mocha": "^2.4.5",
     "mocha-webpack": "^0.3.0",
+    "query-string": "^4.1.0",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-textarea-autosize": "^4.0.0",

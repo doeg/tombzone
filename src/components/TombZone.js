@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import qs from 'query-string';
 import React from 'react';
 import TextArea from 'react-textarea-autosize';
 
@@ -7,8 +8,9 @@ import { makeTombstone } from '../modules/tombstone';
 
 export default React.createClass({
   getInitialState() {
+    const queryString = qs.parse(window.location.search);
     return {
-      epitaph: '',
+      epitaph: _.get(queryString, 'epitaph', ''),
       isCentered: true,
       template: 'rest-in-pieces'
     };
