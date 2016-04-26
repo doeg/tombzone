@@ -16,12 +16,12 @@ export function centerLine(str, maxLength, padChar = ' ') {
   let buff = str;
   let i = 0;
   while (buff.length < maxLength) {
-    buff = i++ % 2 == 0 ? (padChar + buff) : (buff + padChar);
+    buff = i++ % 2 == 0 ? (buff + padChar) : (padChar + buff);
   }
   return buff;
 }
 
-export function splitString(str, maxLength) {
+export function splitString(str, maxLength, isCentered) {
   // Retain the original newline formatting of the epitaph
   let result = [];
 
@@ -42,17 +42,17 @@ export function splitString(str, maxLength) {
     result.push(line);
   });
 
-  return result.map(l => centerLine(l, maxLength));
+  return isCentered ? result.map(l => centerLine(l, maxLength)) : result;
 }
 
-export function makeTombstone(templateKey, epitaph) {
+export function makeTombstone(templateKey, epitaph, isCentered = true) {
   const template = _.get(templates, templateKey);
 
   if (!epitaph.trim()) {
     return template.ascii;
   }
 
-  var lines = splitString(epitaph, template.maxWidth);
+  var lines = splitString(epitaph, template.maxWidth, isCentered);
 
   var ascii = [];
   for (var i = 0; i < template.ascii.length; i++) {

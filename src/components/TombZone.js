@@ -9,8 +9,13 @@ export default React.createClass({
   getInitialState() {
     return {
       epitaph: '',
+      isCentered: true,
       template: 'rest-in-pieces'
     };
+  },
+
+  onAlignmentChange(e) {
+    this.setState({ isCentered: e.target.checked });
   },
 
   onTombstoneSelect(e) {
@@ -34,7 +39,7 @@ export default React.createClass({
   },
 
   renderTombstone() {
-    const tombstone = makeTombstone(this.state.template, this.state.epitaph);
+    const tombstone = makeTombstone(this.state.template, this.state.epitaph, this.state.isCentered);
     const width = tombstone[0].length + "ch";
     return (
       <pre id="output" style={{ width }}>
@@ -88,6 +93,11 @@ export default React.createClass({
 
                 <div className="form-group">
                   <TextArea id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph" rows={3}/>
+                </div>
+                <div>
+                  <label>
+                    <input type="checkbox" checked={this.state.isCentered} onChange={this.onAlignmentChange} /> Center text
+                  </label>
                 </div>
             </form>
         </div>

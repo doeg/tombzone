@@ -20054,8 +20054,12 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      epitaph: '',
+	      isCentered: true,
 	      template: 'rest-in-pieces'
 	    };
+	  },
+	  onAlignmentChange: function onAlignmentChange(e) {
+	    this.setState({ isCentered: e.target.checked });
 	  },
 	  onTombstoneSelect: function onTombstoneSelect(e) {
 	    var template = e.target.selectedOptions[0].value;
@@ -20080,7 +20084,7 @@
 	    );
 	  },
 	  renderTombstone: function renderTombstone() {
-	    var tombstone = (0, _tombstone.makeTombstone)(this.state.template, this.state.epitaph);
+	    var tombstone = (0, _tombstone.makeTombstone)(this.state.template, this.state.epitaph, this.state.isCentered);
 	    var width = tombstone[0].length + "ch";
 	    return _react2.default.createElement(
 	      'pre',
@@ -20136,6 +20140,16 @@
 	            'div',
 	            { className: 'form-group' },
 	            _react2.default.createElement(_reactTextareaAutosize2.default, { id: 'epitaph', onChange: this.onEpitaphUpdate, value: this.state.epitaph, placeholder: 'write your epitaph', rows: 3 })
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(
+	              'label',
+	              null,
+	              _react2.default.createElement('input', { type: 'checkbox', checked: this.state.isCentered, onChange: this.onAlignmentChange }),
+	              ' Center text'
+	            )
 	          )
 	        )
 	      )
@@ -36687,12 +36701,12 @@
 	  var buff = str;
 	  var i = 0;
 	  while (buff.length < maxLength) {
-	    buff = i++ % 2 == 0 ? padChar + buff : buff + padChar;
+	    buff = i++ % 2 == 0 ? buff + padChar : padChar + buff;
 	  }
 	  return buff;
 	}
 
-	function splitString(str, maxLength) {
+	function splitString(str, maxLength, isCentered) {
 	  // Retain the original newline formatting of the epitaph
 	  var result = [];
 
@@ -36713,19 +36727,21 @@
 	    result.push(line);
 	  });
 
-	  return result.map(function (l) {
+	  return isCentered ? result.map(function (l) {
 	    return centerLine(l, maxLength);
-	  });
+	  }) : result;
 	}
 
 	function makeTombstone(templateKey, epitaph) {
+	  var isCentered = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
+
 	  var template = _lodash2.default.get(_templates2.default, templateKey);
 
 	  if (!epitaph.trim()) {
 	    return template.ascii;
 	  }
 
-	  var lines = splitString(epitaph, template.maxWidth);
+	  var lines = splitString(epitaph, template.maxWidth, isCentered);
 
 	  var ascii = [];
 	  for (var i = 0; i < template.ascii.length; i++) {

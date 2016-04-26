@@ -1,64 +1,71 @@
 body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #111;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #999;
+  font-family: "Courier New", Monospace;
+}
+
+body {
+  font-size: 62.5%;
+  line-height: 1.4;
 }
 
 pre {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .container {
-    width: 420px;
-    margin: 0 auto;
-    padding: 24px 0;
+  width: 420px;
+  margin: 0 auto;
+  padding: 24px 0;
 }
 
 .header {
-    font-family: "Courier New", Monospace;
-    font-size: 8px;
-    padding: 24px 0;
+  font-family: "Courier New", Monospace;
+  font-size: 8px;
+  padding: 24px 0;
 }
 
 .header pre {
-    color: #32EA32;
-    margin: 0 auto;
-    width: 400px;
+  color: #32EA32;
+  margin: 0 auto;
+  width: 400px;
 }
 
 .input-container {
-    width: 210px;
-    margin: 0 auto;
+  width: 210px;
+  margin: 0 auto;
 }
 
 form#input {
-    padding: 12px 0;
+  padding: 12px 0;
 }
 
 form#input .form-group {
-    margin: 12px 0;
+  margin: 12px 0;
 }
 
 form#input select,
 #epitaph {
-    width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    outline: none;
-    border: solid 1px #666;
-    background-color: transparent;
-    color: white;
-    font-family: "Courier New", Monospace;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: solid 1px #666;
+  background-color: transparent;
+  color: white;
+  font-family: "Courier New", Monospace;
 }
 
 form#input select {
-    height: 24px;
+  height: 24px;
 }
 
 #epitaph {
-    padding: 1ch;
-    resize: none;
+  padding: 1ch;
+  resize: none;
 }
 
 form#input select:focus,
@@ -68,26 +75,26 @@ form#input select:focus,
 }
 
 .tombstone-output {
-    width: 100%;
+  width: 100%;
 }
 
 #output {
-    margin: 0 auto;
-    border: dashed 1px #666;
-    color: white;
-    padding: 2ch;
-    font-size: 11px;
+  margin: 0 auto;
+  border: dashed 1px #666;
+  color: white;
+  padding: 2ch;
+  font-size: 11px;
 }
 
 #output pre p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .tombstones {
-    font-size: 10px;
-    color: #666;
-    width: 280px;
-    margin: 0 auto;
-    margin-bottom: -0.25rem;
+  font-size: 10px;
+  color: #666;
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: -0.25rem;
 }
