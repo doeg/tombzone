@@ -30,13 +30,14 @@ export function splitString(str, maxLength, isCentered) {
 
     // split the line into words
     words.split(' ').forEach(word => {
-      if (line.length + word.length > maxLength) {
+      let paddedWord = line.length ? ` ${word}` : word;
+      if (line.length + paddedWord.length > maxLength) {
         result.push(line);
         line = '';
+        paddedWord = word;
       }
 
-      let newlyPaddedWord = line.length ? ` ${word}` : word;
-      line += newlyPaddedWord;
+      line += paddedWord;
     });
 
     result.push(line);
