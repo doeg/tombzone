@@ -36648,7 +36648,7 @@
 	        name: "kiss from a rose",
 	        startRow: 9,
 	        startCol: 5,
-	        maxWidth: 12,
+	        maxWidth: 11,
 	        ascii: ['          .             ', '         -|-              ', '          |               ', '      __..|..__           ', '    .\'         \':, ', '   /  __  _  __  \\\\    ', '   | |_)) || |_))||    ', '   | | \\\\ || |   ||    ', '   |             ||     ', '   |             ||     ', '   |             ||   _,   ', '   |             ||.-(_{}  ', '   |             |/    `   ', '   |        ,_ (\;|/)  ', ' \\\\|       {}_)-,||`   ', ' \\\\;/,,;;;;;;;,\\\\|//,  ', '.;;;;;;;;;;;;;;;;, ']
 	    },
 
@@ -36715,13 +36715,14 @@
 
 	    // split the line into words
 	    words.split(' ').forEach(function (word) {
-	      if (line.length + word.length > maxLength) {
+	      var paddedWord = line.length ? ' ' + word : word;
+	      if (line.length + paddedWord.length > maxLength) {
 	        result.push(line);
 	        line = '';
+	        paddedWord = word;
 	      }
 
-	      var newlyPaddedWord = line.length ? ' ' + word : word;
-	      line += newlyPaddedWord;
+	      line += paddedWord;
 	    });
 
 	    result.push(line);

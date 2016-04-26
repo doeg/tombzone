@@ -74,7 +74,7 @@ module.exports = {
         name: "kiss from a rose",
         startRow: 9,
         startCol: 5,
-        maxWidth: 12,
+        maxWidth: 11,
         ascii: [
         '          .             ',
         '         -|-              ',
