@@ -121,13 +121,11 @@ form#input select:focus,
 
 .cobweb .hovertext {
   display: inline-block;
-  visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s;
+  transition: opacity 0.5s;
   padding: 1rem;
 }
 
 .cobweb:hover .hovertext {
-  visibility: visible;
   opacity: 1;
 }
