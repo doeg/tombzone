@@ -20124,14 +20124,20 @@
 	            'made by ',
 	            _react2.default.createElement(
 	              'a',
-	              { href: 'https://twitter.com/doeg' },
+	              { href: 'https://twitter.com/doeg', target: '_blank' },
 	              '@doeg'
 	            )
 	          ),
 	          _react2.default.createElement(
 	            'p',
 	            null,
-	            'much of the hovertext is from ',
+	            'much of the ascii art is by ',
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'https://en.m.wikipedia.org/wiki/Joan_Stark', target: '_blank' },
+	              'joan stark'
+	            ),
+	            ' via ',
 	            _react2.default.createElement(
 	              'a',
 	              { href: 'http://www.chris.com/ascii/', target: '_blank' },
