@@ -36656,6 +36656,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.splitStringIntoLines = splitStringIntoLines;
 	exports.makeTombstone = makeTombstone;
 
 	var _lodash = __webpack_require__(167);

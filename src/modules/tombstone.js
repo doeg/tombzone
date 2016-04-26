@@ -17,7 +17,7 @@ import templates from '../templates';
  * @param {int} maxLength - inclusive
  * @returns {string[]}
  */
-function splitStringIntoLines(str, maxLength) {
+export function splitStringIntoLines(str, maxLength) {
 
   // Use any line breaks given by the user
   var lines = str.split('\n');
@@ -40,7 +40,6 @@ function splitStringIntoLines(str, maxLength) {
 
   return newLines;
 }
-
 
 export function makeTombstone(templateKey, epitaph) {
   const template = _.get(templates, templateKey);
