@@ -92,7 +92,7 @@ export default React.createClass({
                 </div>
 
                 <div className="form-group">
-                  <TextArea id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph" rows={3}/>
+                  <TextArea autoFocus id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph" rows={3}/>
                 </div>
                 <div>
                   <label>

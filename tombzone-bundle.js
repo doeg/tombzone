@@ -20139,7 +20139,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: 'form-group' },
-	            _react2.default.createElement(_reactTextareaAutosize2.default, { id: 'epitaph', onChange: this.onEpitaphUpdate, value: this.state.epitaph, placeholder: 'write your epitaph', rows: 3 })
+	            _react2.default.createElement(_reactTextareaAutosize2.default, { autoFocus: true, id: 'epitaph', onChange: this.onEpitaphUpdate, value: this.state.epitaph, placeholder: 'write your epitaph', rows: 3 })
 	          ),
 	          _react2.default.createElement(
 	            'div',
