@@ -20106,54 +20106,91 @@
 	  render: function render() {
 	    return _react2.default.createElement(
 	      'div',
-	      { className: 'container' },
+	      null,
 	      _react2.default.createElement(
 	        'div',
-	        { className: 'header' },
+	        { className: 'cobweb' },
 	        _react2.default.createElement(
 	          'pre',
 	          null,
-	          '@@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@@@@@@   @@@@@@   @@@  @@@  @@@@@@@@\n@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@@\n  @@!    @@!  @@@  @@! @@! @@!  @@!  @@@       @@!  @@!  @@@  @@!@!@@@  @@!\n  !@!    !@!  @!@  !@! !@! !@!  !@   @!@      !@!   !@!  @!@  !@!!@!@!  !@!\n  @!!    @!@  !@!  @!! !!@ @!@  @!@!@!@      @!!    @!@  !@!  @!@ !!@!  @!!!:!\n  !!!    !@!  !!!  !@!   ! !@!  !!!@!!!!    !!!     !@!  !!!  !@!  !!!  !!!!!:\n  !!:    !!:  !!!  !!:     !!:  !!:  !!!   !!:      !!:  !!!  !!:  !!!  !!:\n  :!:    :!:  !:!  :!:     :!:  :!:  !:!  :!:       :!:  !:!  :!:  !:!  :!:\n   ::    ::::: ::  :::     ::    :: ::::   :: ::::  ::::: ::   ::   ::   :: ::::\n   :      : :  :    :      :    :: : ::   : :: : :   : :  :   ::    :   : :: ::'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'tombstones' },
+	          '\\\'-._(   /\n  \\  .\'-._\\\n -.\\\'    .-;\n    \\  .\'  (\n .--.\\\'     )\n       `   (\n          _)\n       _\\(_)/_\n        /(O)\\'
+	        ),
 	        _react2.default.createElement(
-	          'pre',
-	          null,
-	          '         +            +            +\n       .-"-.        .-:-.        .-"-.\n      / RIP \\      / RIP \\      / RIP \\\n      |     |      |     |      |     |\n     \\\\     |//   \\\\     |//   \\\\     |//\n      ` " "" "    ` \' "" "     " \'  """ "'
-	        )
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'tombstone-output' },
-	        this.renderTombstone()
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { className: 'input-container' },
-	        _react2.default.createElement(
-	          'form',
-	          { id: 'input' },
+	          'div',
+	          { className: 'hovertext' },
 	          _react2.default.createElement(
-	            'div',
-	            { className: 'form-group' },
-	            this.renderSelect()
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'form-group' },
-	            _react2.default.createElement(_reactTextareaAutosize2.default, { autoFocus: true, id: 'epitaph', onChange: this.onEpitaphUpdate, value: this.state.epitaph, placeholder: 'write your epitaph', rows: 3 })
-	          ),
-	          _react2.default.createElement(
-	            'div',
+	            'p',
 	            null,
+	            'made by ',
 	            _react2.default.createElement(
-	              'label',
+	              'a',
+	              { href: 'https://twitter.com/doeg' },
+	              '@doeg'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'much of the hovertext is from ',
+	            _react2.default.createElement(
+	              'a',
+	              { href: 'http://www.chris.com/ascii/', target: '_blank' },
+	              'chris.com'
+	            )
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'div',
+	        { className: 'container' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'header' },
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            '@@@@@@@   @@@@@@   @@@@@@@@@@   @@@@@@@   @@@@@@@@   @@@@@@   @@@  @@@  @@@@@@@@\n@@@@@@@  @@@@@@@@  @@@@@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@@@@@  @@@@ @@@  @@@@@@@@\n  @@!    @@!  @@@  @@! @@! @@!  @@!  @@@       @@!  @@!  @@@  @@!@!@@@  @@!\n  !@!    !@!  @!@  !@! !@! !@!  !@   @!@      !@!   !@!  @!@  !@!!@!@!  !@!\n  @!!    @!@  !@!  @!! !!@ @!@  @!@!@!@      @!!    @!@  !@!  @!@ !!@!  @!!!:!\n  !!!    !@!  !!!  !@!   ! !@!  !!!@!!!!    !!!     !@!  !!!  !@!  !!!  !!!!!:\n  !!:    !!:  !!!  !!:     !!:  !!:  !!!   !!:      !!:  !!!  !!:  !!!  !!:\n  :!:    :!:  !:!  :!:     :!:  :!:  !:!  :!:       :!:  !:!  :!:  !:!  :!:\n   ::    ::::: ::  :::     ::    :: ::::   :: ::::  ::::: ::   ::   ::   :: ::::\n   :      : :  :    :      :    :: : ::   : :: : :   : :  :   ::    :   : :: ::'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'tombstones' },
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            '         +            +            +\n       .-"-.        .-:-.        .-"-.\n      / RIP \\      / RIP \\      / RIP \\\n      |     |      |     |      |     |\n     \\\\     |//   \\\\     |//   \\\\     |//\n      ` " "" "    ` \' "" "     " \'  """ "'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'tombstone-output' },
+	          this.renderTombstone()
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'input-container' },
+	          _react2.default.createElement(
+	            'form',
+	            { id: 'input' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'form-group' },
+	              this.renderSelect()
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'form-group' },
+	              _react2.default.createElement(_reactTextareaAutosize2.default, { autoFocus: true, id: 'epitaph', onChange: this.onEpitaphUpdate, value: this.state.epitaph, placeholder: 'write your epitaph', rows: 3 })
+	            ),
+	            _react2.default.createElement(
+	              'div',
 	              null,
-	              _react2.default.createElement('input', { type: 'checkbox', checked: this.state.isCentered, onChange: this.onAlignmentChange }),
-	              ' Center text'
+	              _react2.default.createElement(
+	                'label',
+	                null,
+	                _react2.default.createElement('input', { type: 'checkbox', checked: this.state.isCentered, onChange: this.onAlignmentChange }),
+	                ' Center text'
+	              )
 	            )
 	          )
 	        )

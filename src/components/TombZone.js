@@ -56,6 +56,24 @@ export default React.createClass({
 
   render() {
     return (
+      <div>
+      <div className="cobweb">
+      <pre>
+{`\\'-._(   /
+  \\  .'-._\\
+ -.\\'    .-;
+    \\  .'  (
+ .--.\\'     )
+       \`   (
+          _)
+       _\\(_)/_
+        /(O)\\`}
+      </pre>
+      <div className="hovertext">
+        <p>made by <a href="https://twitter.com/doeg">@doeg</a></p>
+        <p>much of the hovertext is from <a href="http://www.chris.com/ascii/" target="_blank">chris.com</a></p>
+      </div>
+      </div>
       <div className="container">
         <div className="header">
           <pre>
@@ -103,6 +121,7 @@ export default React.createClass({
                 </div>
             </form>
         </div>
+    </div>
     </div>
     );
   }
