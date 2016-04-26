@@ -36687,7 +36687,7 @@
 	  var buff = str;
 	  var i = 0;
 	  while (buff.length < maxLength) {
-	    buff = i++ % 2 == 0 ? buff + ' ' : ' ' + buff;
+	    buff = i++ % 2 == 0 ? padChar + buff : buff + padChar;
 	  }
 	  return buff;
 	}
@@ -36713,7 +36713,9 @@
 	    result.push(line);
 	  });
 
-	  return result;
+	  return result.map(function (l) {
+	    return centerLine(l, maxLength);
+	  });
 	}
 
 	function makeTombstone(templateKey, epitaph) {

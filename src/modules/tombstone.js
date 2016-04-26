@@ -16,7 +16,7 @@ export function centerLine(str, maxLength, padChar = ' ') {
   let buff = str;
   let i = 0;
   while (buff.length < maxLength) {
-    buff = i++ % 2 == 0 ? buff + ' ' : ' ' + buff;
+    buff = i++ % 2 == 0 ? (padChar + buff) : (buff + padChar);
   }
   return buff;
 }
@@ -42,7 +42,7 @@ export function splitString(str, maxLength) {
     result.push(line);
   });
 
-  return result;
+  return result.map(l => centerLine(l, maxLength));
 }
 
 export function makeTombstone(templateKey, epitaph) {
