@@ -105,7 +105,7 @@ export default React.createClass({
         <div id="screenshot-group">
           <div className="tombstones">
               <pre>
-  {`         +            +            +
+    {`           +            +            +
          .-"-.        .-:-.        .-"-.
         / RIP \\      / RIP \\      / RIP \\
         |     |      |     |      |     |

@@ -20181,7 +20181,7 @@
 	            _react2.default.createElement(
 	              'pre',
 	              null,
-	              '         +            +            +\n         .-"-.        .-:-.        .-"-.\n        / RIP \\      / RIP \\      / RIP \\\n        |     |      |     |      |     |\n       \\\\     |//   \\\\     |//   \\\\     |//\n        ` " "" "    ` \' "" "     " \'  """ "'
+	              '           +            +            +\n         .-"-.        .-:-.        .-"-.\n        / RIP \\      / RIP \\      / RIP \\\n        |     |      |     |      |     |\n       \\\\     |//   \\\\     |//   \\\\     |//\n        ` " "" "    ` \' "" "     " \'  """ "'
 	            )
 	          ),
 	          _react2.default.createElement(
