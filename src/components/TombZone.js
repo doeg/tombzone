@@ -2,6 +2,8 @@ import _ from 'lodash';
 import qs from 'query-string';
 import React from 'react';
 import TextArea from 'react-textarea-autosize';
+import html2canvas from 'html2canvas';
+import { saveAs } from 'filesaverjs';
 
 import templates from '../templates';
 import { makeTombstone } from '../modules/tombstone';
@@ -28,6 +30,16 @@ export default React.createClass({
   onEpitaphUpdate(e) {
     const epitaph = e.target.value;
     this.setState({ epitaph });
+  },
+
+  onSave(e) {
+    e.preventDefault();
+    html2canvas(document.getElementById('screenshot-group'))
+      .then(canvas => {
+        canvas.toBlob(blob => {
+          saveAs(blob, 'tombzone');
+        });
+      });
   },
 
   renderSelect() {
@@ -90,23 +102,26 @@ export default React.createClass({
           </pre>
         </div>
 
-        <div className="tombstones">
-            <pre>
-{`         +            +            +
-       .-"-.        .-:-.        .-"-.
-      / RIP \\      / RIP \\      / RIP \\
-      |     |      |     |      |     |
-     \\\\     |//   \\\\     |//   \\\\     |//
-      \` " "" "    \` ' "" "     " '  """ "`}
-</pre>
-        </div>
+        <div id="screenshot-group">
+          <div className="tombstones">
+              <pre>
+  {`         +            +            +
+         .-"-.        .-:-.        .-"-.
+        / RIP \\      / RIP \\      / RIP \\
+        |     |      |     |      |     |
+       \\\\     |//   \\\\     |//   \\\\     |//
+        \` " "" "    \` ' "" "     " '  """ "`}
+  </pre>
+          </div>
 
-        <div className="tombstone-output">
-          {this.renderTombstone()}
+          <div className="tombstone-output">
+            {this.renderTombstone()}
+            <div className="watermark">http://tomb.zone</div>
+          </div>
         </div>
 
         <div className="input-container">
-            <form id="input">
+            <form id="input" onSubmit={this.onSave}>
                 <div className="form-group">
                   {this.renderSelect()}
                 </div>
@@ -114,10 +129,9 @@ export default React.createClass({
                 <div className="form-group">
                   <TextArea autoFocus id="epitaph" onChange={this.onEpitaphUpdate} value={this.state.epitaph} placeholder="write your epitaph" rows={3}/>
                 </div>
-                <div>
-                  <label>
-                    <input type="checkbox" checked={this.state.isCentered} onChange={this.onAlignmentChange} /> Center text
-                  </label>
+
+                <div className="text-center">
+                  <button>save image</button>
                 </div>
             </form>
         </div>

@@ -6,6 +6,13 @@ body, html {
   font-family: "Courier New", Monospace;
 }
 
+#screenshot-group {
+  background: #111;
+  padding: 1rem 2rem;
+  display: inline-block;
+  margin: 0 auto;
+}
+
 body {
   font-size: 62.5%;
   line-height: 1.4;
@@ -97,7 +104,7 @@ form#input select:focus,
 
 .tombstones {
   font-size: 10px;
-  color: #666;
+  color: #888;
   width: 280px;
   margin: 0 auto;
   margin-bottom: -0.25rem;
@@ -128,4 +135,14 @@ form#input select:focus,
 
 .cobweb:hover .hovertext {
   opacity: 1;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.watermark {
+  opacity: 0.75;
+  text-align: center;
+  margin: 0.5rem 0;
 }
