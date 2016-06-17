@@ -20049,13 +20049,13 @@
 
 	var _html2canvas2 = _interopRequireDefault(_html2canvas);
 
-	var _filesaverjs = __webpack_require__(176);
+	var _filesaverjs = __webpack_require__(174);
 
-	var _templates = __webpack_require__(174);
+	var _templates = __webpack_require__(177);
 
 	var _templates2 = _interopRequireDefault(_templates);
 
-	var _tombstone = __webpack_require__(175);
+	var _tombstone = __webpack_require__(178);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40344,161 +40344,6 @@
 
 /***/ },
 /* 174 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-	    "weeping-angel": {
-	        name: "weeping angel",
-	        startRow: 11,
-	        startCol: 12,
-	        maxWidth: 17,
-	        ascii: ['                  _  /)                   ', '                 mo / )                   ', '                 |/)\\)                    ', '                  /\\_                     ', '                  \\__|=                   ', '                 (    )                   ', '                 __)(__                   ', '           _____/      \\\\_____            ', '          |                   ||           ', '          |     + R.I.P. +    ||           ', '          |                   ||           ', '          |                   ||           ', '          |                   ||           ', '  *       | *   **    * **    |**      **  ', '   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//   ']
-	    },
-
-	    "archangel": {
-	        name: "archangel",
-	        startRow: 9,
-	        startCol: 12,
-	        maxWidth: 16,
-	        ascii: ['                (\\  _  /)               ', '                ( \\ O / )               ', '                 (// \\\\)                ', '                    X                   ', '                   / \\                  ', '                  /___\\                 ', '           _____/      \\\\_____          ', '          |         +         ||         ', '          |                   ||         ', '          |                   ||         ', '          |                   ||         ', '          |  _     ___   _    ||         ', '          | | \\     |   | \\   ||         ', '          | |  |    |   |  |  ||         ', '          | |_/     |   |_/   ||         ', '          | | \\     |   |     ||         ', '          | |  \\    |   |     ||         ', '          | |   \\. _|_. | .   ||         ', '          |                   ||         ', '  *     * | *   **    * **    |**     **', '   \\))ejm\\(/.,(//,,..,,\\||(,,.,\\\\,.((// ']
-	    },
-
-	    "tiny-ghoul": {
-	        name: "tiny ghoul",
-	        startRow: 3,
-	        startCol: 7,
-	        maxWidth: 5,
-	        ascii: ['       _____      ', '     //  +  \\     ', '    ||  RIP  |    ', '    ||       |    ', '    ||       |    ', '   \\||/\\/\\//\\|/   ']
-	    },
-
-	    "kiss-from-a-rose": {
-	        name: "kiss from a rose",
-	        startRow: 9,
-	        startCol: 5,
-	        maxWidth: 11,
-	        ascii: ['          .             ', '         -|-              ', '          |               ', '      __..|..__           ', '    .\'         \':, ', '   /  __  _  __  \\\\    ', '   | |_)) || |_))||    ', '   | | \\\\ || |   ||    ', '   |             ||     ', '   |             ||     ', '   |             ||   _,   ', '   |             ||.-(_{}  ', '   |             |/    `   ', '   |        ,_ (\;|/)  ', ' \\\\|       {}_)-,||`   ', ' \\\\;/,,;;;;;;;,\\\\|//,  ', '.;;;;;;;;;;;;;;;;, ']
-	    },
-
-	    "rest-in-pieces": {
-	        name: "rest in pieces",
-	        startRow: 15,
-	        startCol: 35,
-	        maxWidth: 9,
-	        ascii: ['          .--. .-,       .-..-.__                  ', '        .\'(`.-` \\_.-\'-./`  |\\_( "\\__', '     __.>\\ \';  _;---,._|   / __/`\'--)', '    /.--.  : |/\' _.--.<|  /  | |', '_..-\'    `\\     /\' /`  /_/ _/_/', ' >_.-``-. `Y  /\' _;---.`|/)))) ', '\'` .-\'\'. \\|:  \.\'   __, .-\'"`', ' .\'--._ `-:  \\/:  /\'  \'.\\             _|_', '     /.\'`\\ :;   /\'      `-           `-|-`', '    -`    |     |                      |', '          :.; : |                  .-\'~^~`-.', '          |:    |                .\' _     _ `.', '          |:.   |                | |_) | |_) |', '          :. :  |                | | \\ | |   |', '          : ;   |                |           |', '          : ;   |                |           |', '        .jgs. : ;                |           |', '-."-/\\\\\\/:::.    `\\."-._\'."-"_\\\\-|           |///."-', '" -."-.\\\\"-."//.-".`-."_\\\\-.".-\\\\`=.........=`//-".']
-	    }
-	};
-
-/***/ },
-/* 175 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.centerLine = centerLine;
-	exports.splitString = splitString;
-	exports.makeTombstone = makeTombstone;
-
-	var _lodash = __webpack_require__(167);
-
-	var _lodash2 = _interopRequireDefault(_lodash);
-
-	var _templates = __webpack_require__(174);
-
-	var _templates2 = _interopRequireDefault(_templates);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 *   ,                 ,,            ,
-	 *  ||                 ||           ||                        '
-	 * =||=  /'\\ \\/\\/\\ ||/|,  _-_, =||=  /'\\ \\/\\  _-_     \\  _-_,
-	 *  ||  || || || || || || || ||_.   ||  || || || || || \\    || ||_.
-	 *  ||  || || || || || || |'  ~ ||  ||  || || || || ||/      ||  ~ ||
-	 *  \\, \\,/  \\ \\ \\ \\/   ,-_-   \\, \\,/  \\ \\ \\,/  <> || ,-_-
-	 *                                                           |;
-	 *  Extremely spooky tombstones, all shapes and sizes.       /
-	 *  http://tomb.zone
-	 */
-	function centerLine(str, maxLength) {
-	  var padChar = arguments.length <= 2 || arguments[2] === undefined ? ' ' : arguments[2];
-
-	  var buff = str;
-	  var i = 0;
-	  while (buff.length < maxLength) {
-	    buff = i++ % 2 == 0 ? buff + padChar : padChar + buff;
-	  }
-	  return buff;
-	}
-
-	function splitString(str, maxLength, isCentered) {
-	  // Retain the original newline formatting of the epitaph
-	  var result = [];
-
-	  str.split('\n').forEach(function (words) {
-	    var line = '';
-
-	    // split the line into words
-	    words.split(' ').forEach(function (word) {
-	      var paddedWord = line.length ? ' ' + word : word;
-	      if (line.length + paddedWord.length > maxLength) {
-	        result.push(line);
-	        line = '';
-	        paddedWord = word;
-	      }
-
-	      line += paddedWord;
-	    });
-
-	    result.push(line);
-	  });
-
-	  return isCentered ? result.map(function (l) {
-	    return centerLine(l, maxLength);
-	  }) : result;
-	}
-
-	function makeTombstone(templateKey, epitaph) {
-	  var isCentered = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
-
-	  var template = _lodash2.default.get(_templates2.default, templateKey);
-
-	  if (!epitaph.trim()) {
-	    return template.ascii;
-	  }
-
-	  var lines = splitString(epitaph, template.maxWidth, isCentered);
-
-	  var ascii = [];
-	  for (var i = 0; i < template.ascii.length; i++) {
-	    ascii[i] = template.ascii[i].slice(0);
-	  }
-
-	  // Pad the lines to be equal
-	  // TODO
-
-	  // Insert the epitaph into the template string
-	  var currentRow = template.startRow;
-	  var startCol = template.startCol;
-	  var asciiTemplate = ascii.splice(template.startRow, 1)[0];
-
-	  for (var currentLine = 0; currentLine < lines.length; currentLine++) {
-	    var line = lines[currentLine];
-	    var endCol = startCol + line.length;
-
-	    var newLine = asciiTemplate.substring(0, startCol) + line + asciiTemplate.substring(endCol);
-	    ascii.splice(currentRow++, 0, newLine);
-	  }
-
-	  return ascii;
-	}
-
-/***/ },
-/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* FileSaver.js
@@ -40776,7 +40621,7 @@
 
 	if (typeof module !== "undefined" && module.exports) {
 	  module.exports.saveAs = saveAs;
-	} else if (("function" !== "undefined" && __webpack_require__(177) !== null) && (__webpack_require__(178) !== null)) {
+	} else if (("function" !== "undefined" && __webpack_require__(175) !== null) && (__webpack_require__(176) !== null)) {
 	  !(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() {
 	    return saveAs;
 	  }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
@@ -40784,19 +40629,182 @@
 
 
 /***/ },
-/* 177 */
+/* 175 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 178 */
+/* 176 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {module.exports = __webpack_amd_options__;
 
 	/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+	    "weeping-angel": {
+	        name: "weeping angel",
+	        startRow: 11,
+	        startCol: 12,
+	        maxWidth: 17,
+	        ascii: ['                  _  /)                   ', '                 mo / )                   ', '                 |/)\\)                    ', '                  /\\_                     ', '                  \\__|=                   ', '                 (    )                   ', '                 __)(__                   ', '           _____/      \\\\_____            ', '          |                   ||           ', '          |     + R.I.P. +    ||           ', '          |                   ||           ', '          |                   ||           ', '          |                   ||           ', '  *       | *   **    * **    |**      **  ', '   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//   ']
+	    },
+
+	    "archangel": {
+	        name: "archangel",
+	        startRow: 9,
+	        startCol: 12,
+	        maxWidth: 16,
+	        ascii: ['                (\\  _  /)               ', '                ( \\ O / )               ', '                 (// \\\\)                ', '                    X                   ', '                   / \\                  ', '                  /___\\                 ', '           _____/      \\\\_____          ', '          |         +         ||         ', '          |                   ||         ', '          |                   ||         ', '          |                   ||         ', '          |  _     ___   _    ||         ', '          | | \\     |   | \\   ||         ', '          | |  |    |   |  |  ||         ', '          | |_/     |   |_/   ||         ', '          | | \\     |   |     ||         ', '          | |  \\    |   |     ||         ', '          | |   \\. _|_. | .   ||         ', '          |                   ||         ', '  *     * | *   **    * **    |**     **', '   \\))ejm\\(/.,(//,,..,,\\||(,,.,\\\\,.((// ']
+	    },
+
+	    "tiny-ghoul": {
+	        name: "tiny ghoul",
+	        startRow: 3,
+	        startCol: 7,
+	        maxWidth: 5,
+	        ascii: ['       _____      ', '     //  +  \\     ', '    ||  RIP  |    ', '    ||       |    ', '    ||       |    ', '   \\||/\\/\\//\\|/   ']
+	    },
+
+	    "kiss-from-a-rose": {
+	        name: "kiss from a rose",
+	        startRow: 9,
+	        startCol: 5,
+	        maxWidth: 11,
+	        ascii: ['          .             ', '         -|-              ', '          |               ', '      __..|..__           ', '    .\'         \':, ', '   /  __  _  __  \\\\    ', '   | |_)) || |_))||    ', '   | | \\\\ || |   ||    ', '   |             ||     ', '   |             ||     ', '   |             ||   _,   ', '   |             ||.-(_{}  ', '   |             |/    `   ', '   |        ,_ (\;|/)  ', ' \\\\|       {}_)-,||`   ', ' \\\\;/,,;;;;;;;,\\\\|//,  ', '.;;;;;;;;;;;;;;;;, ']
+	    },
+
+	    "rest-in-pieces": {
+	        name: "rest in pieces",
+	        startRow: 15,
+	        startCol: 35,
+	        maxWidth: 9,
+	        ascii: ['          .--. .-,       .-..-.__                  ', '        .\'(`.-` \\_.-\'-./`  |\\_( "\\__', '     __.>\\ \';  _;---,._|   / __/`\'--)', '    /.--.  : |/\' _.--.<|  /  | |', '_..-\'    `\\     /\' /`  /_/ _/_/', ' >_.-``-. `Y  /\' _;---.`|/)))) ', '\'` .-\'\'. \\|:  \.\'   __, .-\'"`', ' .\'--._ `-:  \\/:  /\'  \'.\\             _|_', '     /.\'`\\ :;   /\'      `-           `-|-`', '    -`    |     |                      |', '          :.; : |                  .-\'~^~`-.', '          |:    |                .\' _     _ `.', '          |:.   |                | |_) | |_) |', '          :. :  |                | | \\ | |   |', '          : ;   |                |           |', '          : ;   |                |           |', '        .jgs. : ;                |           |', '-."-/\\\\\\/:::.    `\\."-._\'."-"_\\\\-|           |///."-', '" -."-.\\\\"-."//.-".`-."_\\\\-.".-\\\\`=.........=`//-".']
+	    },
+
+	    "memorial-edition": {
+	        name: "memorial edition (NSFW)",
+	        startRow: 11,
+	        startCol: 12,
+	        maxWidth: 17,
+	        ascii: ['                ___                        ', '               //  7                       ', '              (_,_/\\                       ', '               \\    \\                      ', '                \\    \\                     ', '                _\\    \\__                  ', '               (   \\     )                 ', '           _____\\___\\___/_____             ', '          |                   ||           ', '          |     + R.I.P. +    ||           ', '          |                   ||           ', '          |                   ||           ', '          |                   ||           ', '  *       | *   **    * **    |**      **  ', '   \\))ejm97/.,(//,,..,,\\||(,,.,\\\\,.((//   ']
+	    }
+	};
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.centerLine = centerLine;
+	exports.splitString = splitString;
+	exports.makeTombstone = makeTombstone;
+
+	var _lodash = __webpack_require__(167);
+
+	var _lodash2 = _interopRequireDefault(_lodash);
+
+	var _templates = __webpack_require__(177);
+
+	var _templates2 = _interopRequireDefault(_templates);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 *   ,                 ,,            ,
+	 *  ||                 ||           ||                        '
+	 * =||=  /'\\ \\/\\/\\ ||/|,  _-_, =||=  /'\\ \\/\\  _-_     \\  _-_,
+	 *  ||  || || || || || || || ||_.   ||  || || || || || \\    || ||_.
+	 *  ||  || || || || || || |'  ~ ||  ||  || || || || ||/      ||  ~ ||
+	 *  \\, \\,/  \\ \\ \\ \\/   ,-_-   \\, \\,/  \\ \\ \\,/  <> || ,-_-
+	 *                                                           |;
+	 *  Extremely spooky tombstones, all shapes and sizes.       /
+	 *  http://tomb.zone
+	 */
+	function centerLine(str, maxLength) {
+	  var padChar = arguments.length <= 2 || arguments[2] === undefined ? ' ' : arguments[2];
+
+	  var buff = str;
+	  var i = 0;
+	  while (buff.length < maxLength) {
+	    buff = i++ % 2 == 0 ? buff + padChar : padChar + buff;
+	  }
+	  return buff;
+	}
+
+	function splitString(str, maxLength, isCentered) {
+	  // Retain the original newline formatting of the epitaph
+	  var result = [];
+
+	  str.split('\n').forEach(function (words) {
+	    var line = '';
+
+	    // split the line into words
+	    words.split(' ').forEach(function (word) {
+	      var paddedWord = line.length ? ' ' + word : word;
+	      if (line.length + paddedWord.length > maxLength) {
+	        result.push(line);
+	        line = '';
+	        paddedWord = word;
+	      }
+
+	      line += paddedWord;
+	    });
+
+	    result.push(line);
+	  });
+
+	  return isCentered ? result.map(function (l) {
+	    return centerLine(l, maxLength);
+	  }) : result;
+	}
+
+	function makeTombstone(templateKey, epitaph) {
+	  var isCentered = arguments.length <= 2 || arguments[2] === undefined ? true : arguments[2];
+
+	  var template = _lodash2.default.get(_templates2.default, templateKey);
+
+	  if (!epitaph.trim()) {
+	    return template.ascii;
+	  }
+
+	  var lines = splitString(epitaph, template.maxWidth, isCentered);
+
+	  var ascii = [];
+	  for (var i = 0; i < template.ascii.length; i++) {
+	    ascii[i] = template.ascii[i].slice(0);
+	  }
+
+	  // Pad the lines to be equal
+	  // TODO
+
+	  // Insert the epitaph into the template string
+	  var currentRow = template.startRow;
+	  var startCol = template.startCol;
+	  var asciiTemplate = ascii.splice(template.startRow, 1)[0];
+
+	  for (var currentLine = 0; currentLine < lines.length; currentLine++) {
+	    var line = lines[currentLine];
+	    var endCol = startCol + line.length;
+
+	    var newLine = asciiTemplate.substring(0, startCol) + line + asciiTemplate.substring(endCol);
+	    ascii.splice(currentRow++, 0, newLine);
+	  }
+
+	  return ascii;
+	}
 
 /***/ }
 /******/ ]);
