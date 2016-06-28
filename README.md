@@ -1,6 +1,8 @@
 # tombstonejs
 ascii tombstones
 
+(this code is gross and I don't want to hear about it!) 
+
 #### developing
 ```bash
 # Install the dependencies
